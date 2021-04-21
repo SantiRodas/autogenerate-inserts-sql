@@ -17,6 +17,8 @@ namespace project.UserInterface
 
         private readonly Random random = new Random();
 
+        // ----------------------------------------------------------------------------------------------------
+
         // Arrays with the information of the all employees
 
         private String[] fName = { "Santiago", "Luisa", "Camilo", "Erika", "Nolberto", "Valentina", "David", "Susana",
@@ -27,11 +29,26 @@ namespace project.UserInterface
         "Lopez", "Castillo", "Moys", "Leyton", "Valderrama", "Silva", "Torres", "Vivas", "Parra", "Muñoz",
         "Valdes", "Gonzales"};
 
-        private String[] adress = { "Calle", "Carrera", "Transversal", "Avenida", "Kilometro" };
+        private String[] address = { "Calle", "Carrera", "Transversal", "Avenida", "Kilometro" };
 
         private char[] sex = { 'M', 'F' };
 
         private String[] position = { "Profesor", "Asistente", "Coordinador", "Servicio", "Tecnico" };
+
+        // ----------------------------------------------------------------------------------------------------
+
+        // Arrays with the information of the all departaments
+
+        private String[] deptName = { "Matematica", "Quimica", "Ingenieria", "Administracion", "Mercadeo", 
+        "Ciencias", "Servicios", "Contabilidad", "Lenguaje", "Desarollo"};
+
+        // ----------------------------------------------------------------------------------------------------
+
+        // Arrays with the information of the all project
+
+        private String[] projName = { "Infinito numerico", "Estados de la materia", "Programacion reducida", 
+        "Ecuaciones lineales", "Clientes y bienestar", "Cuerpo humano", "Nuevo panorama", 
+        "Balance general", "Nuevos idiomas", "Nuevas aplicaciones"};
 
         // ----------------------------------------------------------------------------------------------------
 
@@ -88,36 +105,59 @@ namespace project.UserInterface
 
         // Generate employee
 
-        public String generateEmployee()
+        public String generateEmployee(String empNo, String deptNo)
         {
-            return "";
+            String name = fName[generateNumber(0, 19)];
+            String lastName = lName[generateNumber(0, 19)];
+            String direction = address[generateNumber(0, 4)] + " " + generateNumber(1, 80).ToString();
+            String date = generateNumber(1, 28).ToString() + "-" + generateNumber(1, 12).ToString();
+            char gender = sex[generateNumber(0, 1)];
+            String job = position[generateNumber(0, 4)];
+
+            String insert = "INSERT INTO Employee VALUES ('" + empNo + "', '" + name + "', '" + lastName + "', '" +
+            direction + "', '" + date + "', '" + gender + "', '" + job + ", '" + deptNo + "');";
+
+            return insert;
         }
 
         // ----------------------------------------------------------------------------------------------------
 
         // Generate Deparment
 
-        public String generateDepartmen()
+        public String generateDepartmen(String deptNo, String mgrEmpNo)
         {
-            return "";
+            String name = deptName[generateNumber(0, 9)];
+
+            String insert = "INSERT INTO Department VALUES ('" + deptNo + "', '" + name + "', '" + mgrEmpNo + "');";
+
+            return insert;
         }
 
         // ----------------------------------------------------------------------------------------------------
 
         // Generate Project
 
-        public String generateProject()
+        public String generateProject(String projNo, String deptNo)
         {
-            return "";
+            String name = projName[generateNumber(0, 9)];
+
+            String insert = "INSERT INTO Project VALUES ('" + projNo + "', '" + name + "', '" + deptNo + "');";
+
+            return insert;
         }
 
         // ----------------------------------------------------------------------------------------------------
 
         // Generate WorksOn
 
-        public String generateWorksOn()
+        public String generateWorksOn(String empNo, String projNo, String dateworked)
         {
-            return "";
+            String hours = generateNumber(1, 16).ToString();
+
+            String insert = "INSERT INTO WorksOn VALUES ('" + empNo + "', '" + projNo + "', '" + dateworked + 
+            "', '" + hours + "');";
+
+            return insert;
         }
 
         // ----------------------------------------------------------------------------------------------------
