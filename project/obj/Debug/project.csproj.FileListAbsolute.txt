@@ -1,0 +1,10 @@
+C:\Users\Santiago\Desktop\Actual semestre\2. Modelado de informacion\4. Talleres\Practica 3\autogenerate-inserts-sql\project\bin\Debug\project.exe.config
+C:\Users\Santiago\Desktop\Actual semestre\2. Modelado de informacion\4. Talleres\Practica 3\autogenerate-inserts-sql\project\bin\Debug\project.exe
+C:\Users\Santiago\Desktop\Actual semestre\2. Modelado de informacion\4. Talleres\Practica 3\autogenerate-inserts-sql\project\bin\Debug\project.pdb
+C:\Users\Santiago\Desktop\Actual semestre\2. Modelado de informacion\4. Talleres\Practica 3\autogenerate-inserts-sql\project\obj\Debug\project.csprojAssemblyReference.cache
+C:\Users\Santiago\Desktop\Actual semestre\2. Modelado de informacion\4. Talleres\Practica 3\autogenerate-inserts-sql\project\obj\Debug\project.Properties.Resources.resources
+C:\Users\Santiago\Desktop\Actual semestre\2. Modelado de informacion\4. Talleres\Practica 3\autogenerate-inserts-sql\project\obj\Debug\project.csproj.GenerateResource.cache
+C:\Users\Santiago\Desktop\Actual semestre\2. Modelado de informacion\4. Talleres\Practica 3\autogenerate-inserts-sql\project\obj\Debug\project.csproj.CoreCompileInputs.cache
+C:\Users\Santiago\Desktop\Actual semestre\2. Modelado de informacion\4. Talleres\Practica 3\autogenerate-inserts-sql\project\obj\Debug\project.exe
+C:\Users\Santiago\Desktop\Actual semestre\2. Modelado de informacion\4. Talleres\Practica 3\autogenerate-inserts-sql\project\obj\Debug\project.pdb
+C:\Users\Santiago\Desktop\Actual semestre\2. Modelado de informacion\4. Talleres\Practica 3\autogenerate-inserts-sql\project\obj\Debug\project.UserInterface.MainWindow.resources
