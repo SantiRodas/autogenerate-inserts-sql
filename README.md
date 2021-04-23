@@ -1,6 +1,6 @@
 # Autogeneration of Inserts for SQL 
 
-This program developed in C# allows to generate N amount of INSERTS to save them in a SQL file, and later to be used in an established database. 
+This program allow to generate N amount of INSERTS to save them in a SQL file, and later to be used in an established database. 
 In this version, the user will have the possibility to select one of the given tables and choose the path where he/she wants to download the produced file.
 
 [![forthebadge](https://forthebadge.com/images/badges/made-with-c-sharp.svg)](https://forthebadge.com)
