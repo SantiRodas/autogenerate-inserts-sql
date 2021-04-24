@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.IO;
 
 namespace project.UserInterface
 {
@@ -52,6 +53,12 @@ namespace project.UserInterface
 
         // ----------------------------------------------------------------------------------------------------
 
+        // Arrays with the information of the WorksOn
+
+        private String[] dateWorksOn = { "Lunes", "Martes", "Miercoles", "Jueves", "Viernes", "Sabado" };
+
+        // ----------------------------------------------------------------------------------------------------
+
         // MainWindow constructor
 
         public MainWindow()
@@ -72,15 +79,63 @@ namespace project.UserInterface
 
                 if (optionTable1.Checked == true)
                 {
+                    // An individual file is created for all automatically generated employees.
+
+                    TextWriter writer = new StreamWriter("Inserts-Employee.sql");
+
+                    for (int i = 0; i < number; i ++)
+                    {
+                        writer.WriteLine(generateEmployee("A" + i, "Dept" + (i + 100)));
+                    }
+
+                    MessageBox.Show("Archivo completo (Ruta: Bin, Debug)");
+
+                    writer.Close();
 
                 } else if (optionTable2.Checked == true)
                 {
+                    // An individual file is created for all automatically generated departments.
+
+                    TextWriter writer = new StreamWriter("Inserts-Deparment.sql");
+
+                    for (int i = 0; i < number; i++)
+                    {
+                        writer.WriteLine(generateDepartmen("Dept" + (i + 100), "A" + i));
+                    }
+
+                    MessageBox.Show("Archivo completo (Ruta: Bin, Debug)");
+
+                    writer.Close();
 
                 } else if (optionTable3.Checked == true)
                 {
+                    // An individual file is created for all automatically generated projects.
+
+                    TextWriter writer = new StreamWriter("Inserts-Project.sql");
+
+                    for (int i = 0; i < number; i++)
+                    {
+                        writer.WriteLine(generateProject("P" + (1000 + i), "Dept" + (i + 100)));
+                    }
+
+                    MessageBox.Show("Archivo completo (Ruta: Bin, Debug)");
+
+                    writer.Close();
 
                 } else if (optionTable4.Checked == true)
                 {
+                    // An individual file is created for all automatically generated WorksOn.
+
+                    TextWriter writer = new StreamWriter("Inserts-WorksOn.sql");
+
+                    for (int i = 0; i < number; i++)
+                    {
+                        writer.WriteLine(generateWorksOn("A" + i, "P" + (1000 + i)));
+                    }
+
+                    MessageBox.Show("Archivo completo (Ruta: Bin, Debug)");
+
+                    writer.Close();
 
                 }
 
@@ -150,11 +205,12 @@ namespace project.UserInterface
 
         // Generate WorksOn
 
-        public String generateWorksOn(String empNo, String projNo, String dateworked)
+        public String generateWorksOn(String empNo, String projNo)
         {
             String hours = generateNumber(1, 16).ToString();
+            String date = dateWorksOn[generateNumber(0, 5)];
 
-            String insert = "INSERT INTO WorksOn VALUES ('" + empNo + "', '" + projNo + "', '" + dateworked + 
+            String insert = "INSERT INTO WorksOn VALUES ('" + empNo + "', '" + projNo + "', '" + date + 
             "', '" + hours + "');";
 
             return insert;
