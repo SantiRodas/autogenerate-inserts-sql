@@ -28,6 +28,9 @@ In this version, the user will have the possibility to select one of the given t
 * [Fernanda Quintero](https://github.com/FernandaRojas152)
 * [Camilo Escobar](https://github.com/chumbi27escobar3)
 
+## License
+* This project is under the license ([GNU Affero General Public License v3.0](https://github.com/SantiRodas/autogenerate-inserts-sql/blob/master/LICENSE))
+
 ## Screenshots
 
 ![](https://github.com/SantiRodas/autogenerate-inserts-sql/blob/master/images/2.JPG)
