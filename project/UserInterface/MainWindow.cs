@@ -34,13 +34,13 @@ namespace project.UserInterface
 
         private char[] sex = { 'M', 'F' };
 
-        private String[] position = { "Profesor", "Asistente", "Coordinador", "Servicio", "Tecnico" };
+        private String[] position = { "Profesor", "Jefe", "Coordinador", "Servicio", "Tecnico" };
 
         // ----------------------------------------------------------------------------------------------------
 
         // Arrays with the information of the all departaments
 
-        private String[] deptName = { "Matematica", "Quimica", "Ingenieria", "Administracion", "Mercadeo", 
+        private String[] deptName = { "Matematica", "Quimica", "Ingenieria", "Administracion", "Mercadeo",
         "Ciencias", "Servicios", "Contabilidad", "Lenguaje", "Desarollo"};
 
         // ----------------------------------------------------------------------------------------------------
@@ -165,7 +165,7 @@ namespace project.UserInterface
             String name = fName[generateNumber(0, 19)];
             String lastName = lName[generateNumber(0, 19)];
             String direction = address[generateNumber(0, 4)] + " " + generateNumber(1, 80).ToString();
-            String date = generateNumber(1, 28).ToString() + "-" + generateNumber(1, 12).ToString();
+            String date = generateNumber(1938, 2000).ToString();
             char gender = sex[generateNumber(0, 1)];
             String job = position[generateNumber(0, 4)];
 
