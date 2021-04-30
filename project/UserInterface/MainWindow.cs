@@ -85,7 +85,7 @@ namespace project.UserInterface
 
                     for (int i = 0; i < number; i ++)
                     {
-                        writer.WriteLine(generateEmployee("A" + i, "Dept" + (i + 100)));
+                        writer.WriteLine(generateEmployee("A" + i, "D" + (i + 100)));
                     }
 
                     MessageBox.Show("Archivo completo (Ruta: Bin, Debug)");
@@ -100,7 +100,7 @@ namespace project.UserInterface
 
                     for (int i = 0; i < number; i++)
                     {
-                        writer.WriteLine(generateDepartmen("Dept" + (i + 100), "A" + i));
+                        writer.WriteLine(generateDepartmen("D" + (i + 100), "A" + i));
                     }
 
                     MessageBox.Show("Archivo completo (Ruta: Bin, Debug)");
@@ -115,7 +115,7 @@ namespace project.UserInterface
 
                     for (int i = 0; i < number; i++)
                     {
-                        writer.WriteLine(generateProject("P" + (1000 + i), "Dept" + (i + 100)));
+                        writer.WriteLine(generateProject("P" + (100 + i), "D" + (i + 100)));
                     }
 
                     MessageBox.Show("Archivo completo (Ruta: Bin, Debug)");
@@ -130,7 +130,7 @@ namespace project.UserInterface
 
                     for (int i = 0; i < number; i++)
                     {
-                        writer.WriteLine(generateWorksOn("A" + i, "P" + (1000 + i)));
+                        writer.WriteLine(generateWorksOn("A" + i, "P" + (100 + i)));
                     }
 
                     MessageBox.Show("Archivo completo (Ruta: Bin, Debug)");
@@ -165,12 +165,14 @@ namespace project.UserInterface
             String name = fName[generateNumber(0, 19)];
             String lastName = lName[generateNumber(0, 19)];
             String direction = address[generateNumber(0, 4)] + " " + generateNumber(1, 80).ToString();
-            String date = generateNumber(1938, 2000).ToString();
+            String year = generateNumber(1938, 2000).ToString();
+            String day = generateNumber(1, 29).ToString();
+            String month = generateNumber(1, 12).ToString();
             char gender = sex[generateNumber(0, 1)];
             String job = position[generateNumber(0, 4)];
 
             String insert = "INSERT INTO Employee VALUES ('" + empNo + "', '" + name + "', '" + lastName + "', '" +
-            direction + "', '" + date + "', '" + gender + "', '" + job + ", '" + deptNo + "');";
+            direction + "', '" + year + "-" + day + "-" + month + "', '" + gender + "', '" + job + ", '" + deptNo + "');";
 
             return insert;
         }
