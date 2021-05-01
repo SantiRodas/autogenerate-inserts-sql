@@ -85,7 +85,7 @@ namespace project.UserInterface
 
                     for (int i = 0; i < number; i ++)
                     {
-                        writer.WriteLine(generateEmployee("A" + i, "D" + (i + 100)));
+                        writer.WriteLine(generateEmployee("A" + i, "D" + i, deptName[generateNumber(0, 9)]));
                     }
 
                     MessageBox.Show("Archivo completo (Ruta: Bin, Debug)");
@@ -100,7 +100,7 @@ namespace project.UserInterface
 
                     for (int i = 0; i < number; i++)
                     {
-                        writer.WriteLine(generateDepartmen("D" + (i + 100), "A" + i));
+
                     }
 
                     MessageBox.Show("Archivo completo (Ruta: Bin, Debug)");
@@ -115,7 +115,7 @@ namespace project.UserInterface
 
                     for (int i = 0; i < number; i++)
                     {
-                        writer.WriteLine(generateProject("P" + (100 + i), "D" + (i + 100)));
+
                     }
 
                     MessageBox.Show("Archivo completo (Ruta: Bin, Debug)");
@@ -130,7 +130,7 @@ namespace project.UserInterface
 
                     for (int i = 0; i < number; i++)
                     {
-                        writer.WriteLine(generateWorksOn("A" + i, "P" + (100 + i)));
+                        
                     }
 
                     MessageBox.Show("Archivo completo (Ruta: Bin, Debug)");
@@ -160,8 +160,10 @@ namespace project.UserInterface
 
         // Generate employee
 
-        public String generateEmployee(String empNo, String deptNo)
+        public String generateEmployee(String empNo, String deptNo, String deptName)
         {
+            String insert = ""; 
+
             String name = fName[generateNumber(0, 19)];
             String lastName = lName[generateNumber(0, 19)];
             String direction = address[generateNumber(0, 4)] + " " + generateNumber(1, 80).ToString();
@@ -171,8 +173,19 @@ namespace project.UserInterface
             char gender = sex[generateNumber(0, 1)];
             String job = position[generateNumber(0, 4)];
 
-            String insert = "INSERT INTO Employee VALUES ('" + empNo + "', '" + name + "', '" + lastName + "', '" +
-            direction + "', '" + year + "-" + day + "-" + month + "', '" + gender + "', '" + job + ", '" + deptNo + "');";
+            insert += "\n" + "-- Este es un comentario para seperar INSERT de manera ordenada";
+
+            insert += "\n" + "\n" + "INSERT INTO DEPARTMENT (deptNo, deptName) VALUES ('" + deptNo + "', '" + deptName + "');";
+
+            insert += "\n" + "INSERT INTO EMPLOYEE (empNo, fname, lname, address, dob, sex, position, deptNo)";
+
+            insert += " VALUES ('" + empNo + "', '" + name + "', '" + lastName + "', '" + direction + "', TO_DATE('" + year + "' ,'yyyy'), '" + gender + "', '" + job + "', '" + deptNo + "');";
+
+            insert += "\n" + "\n" + "UPDATE DEPARTMENT";
+
+            insert += "\n" + "set mgrempno = '" + empNo + "'";
+
+            insert += "\n" + "WHERE deptno = '" + deptNo + "';";
 
             return insert;
         }
@@ -209,11 +222,10 @@ namespace project.UserInterface
 
         public String generateWorksOn(String empNo, String projNo)
         {
+            String insert = "";
+
             String hours = generateNumber(1, 16).ToString();
             String date = dateWorksOn[generateNumber(0, 5)];
-
-            String insert = "INSERT INTO WorksOn VALUES ('" + empNo + "', '" + projNo + "', '" + date + 
-            "', '" + hours + "');";
 
             return insert;
         }
