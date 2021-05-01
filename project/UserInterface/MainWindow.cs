@@ -81,7 +81,7 @@ namespace project.UserInterface
                 {
                     // An individual file is created for all automatically generated employees.
 
-                    TextWriter writer = new StreamWriter("Inserts-Employee.sql");
+                    TextWriter writer = new StreamWriter("Employee-Deparment.sql");
 
                     for (int i = 0; i < number; i ++)
                     {
@@ -92,30 +92,15 @@ namespace project.UserInterface
 
                     writer.Close();
 
-                } else if (optionTable2.Checked == true)
-                {
-                    // An individual file is created for all automatically generated departments.
-
-                    TextWriter writer = new StreamWriter("Inserts-Deparment.sql");
-
-                    for (int i = 0; i < number; i++)
-                    {
-
-                    }
-
-                    MessageBox.Show("Archivo completo (Ruta: Bin, Debug)");
-
-                    writer.Close();
-
                 } else if (optionTable3.Checked == true)
                 {
                     // An individual file is created for all automatically generated projects.
 
-                    TextWriter writer = new StreamWriter("Inserts-Project.sql");
+                    TextWriter writer = new StreamWriter("Project.sql");
 
                     for (int i = 0; i < number; i++)
                     {
-
+                        writer.WriteLine(generateProject("A" + i, "D" + i));
                     }
 
                     MessageBox.Show("Archivo completo (Ruta: Bin, Debug)");
@@ -126,11 +111,11 @@ namespace project.UserInterface
                 {
                     // An individual file is created for all automatically generated WorksOn.
 
-                    TextWriter writer = new StreamWriter("Inserts-WorksOn.sql");
+                    TextWriter writer = new StreamWriter("WorksOn.sql");
 
                     for (int i = 0; i < number; i++)
                     {
-                        
+                        writer.Write(generateWorksOn("A" + i, "P" + i));
                     }
 
                     MessageBox.Show("Archivo completo (Ruta: Bin, Debug)");
@@ -192,26 +177,17 @@ namespace project.UserInterface
 
         // ----------------------------------------------------------------------------------------------------
 
-        // Generate Deparment
-
-        public String generateDepartmen(String deptNo, String mgrEmpNo)
-        {
-            String name = deptName[generateNumber(0, 9)];
-
-            String insert = "INSERT INTO Department VALUES ('" + deptNo + "', '" + name + "', '" + mgrEmpNo + "');";
-
-            return insert;
-        }
-
-        // ----------------------------------------------------------------------------------------------------
-
         // Generate Project
 
         public String generateProject(String projNo, String deptNo)
         {
+            String insert = "";
+
             String name = projName[generateNumber(0, 9)];
 
-            String insert = "INSERT INTO Project VALUES ('" + projNo + "', '" + name + "', '" + deptNo + "');";
+            insert += "\n" + "-- Este es un comentario para seperar INSERT de manera ordenada";
+
+            insert += "\n" + "\n" + "INSERT INTO PROJECT (projNo, projName, deptNo) VALUES ('" + projNo + "', '" + name + "', '" + deptNo + "');";
 
             return insert;
         }
@@ -226,6 +202,10 @@ namespace project.UserInterface
 
             String hours = generateNumber(1, 16).ToString();
             String date = dateWorksOn[generateNumber(0, 5)];
+
+            insert += "\n" + "-- Este es un comentario para seperar INSERT de manera ordenada";
+
+            insert += "\n" + "\n" + "INSERT INTO WORKSON (empNo, projNo, hours) VALUES ('" + empNo + "', '" + projNo + "', '" + hours + "');" + "\n";
 
             return insert;
         }

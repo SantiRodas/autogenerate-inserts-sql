@@ -31,7 +31,6 @@ namespace project.UserInterface
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainWindow));
             this.optionTable1 = new System.Windows.Forms.RadioButton();
-            this.optionTable2 = new System.Windows.Forms.RadioButton();
             this.optionTable3 = new System.Windows.Forms.RadioButton();
             this.optionTable4 = new System.Windows.Forms.RadioButton();
             this.title2 = new System.Windows.Forms.Label();
@@ -46,31 +45,19 @@ namespace project.UserInterface
             // 
             this.optionTable1.AutoSize = true;
             this.optionTable1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.optionTable1.Location = new System.Drawing.Point(325, 47);
+            this.optionTable1.Location = new System.Drawing.Point(292, 67);
             this.optionTable1.Name = "optionTable1";
-            this.optionTable1.Size = new System.Drawing.Size(80, 19);
+            this.optionTable1.Size = new System.Drawing.Size(154, 19);
             this.optionTable1.TabIndex = 0;
             this.optionTable1.TabStop = true;
-            this.optionTable1.Text = "Employee";
+            this.optionTable1.Text = "Employee / Department";
             this.optionTable1.UseVisualStyleBackColor = true;
-            // 
-            // optionTable2
-            // 
-            this.optionTable2.AutoSize = true;
-            this.optionTable2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.optionTable2.Location = new System.Drawing.Point(325, 88);
-            this.optionTable2.Name = "optionTable2";
-            this.optionTable2.Size = new System.Drawing.Size(87, 19);
-            this.optionTable2.TabIndex = 1;
-            this.optionTable2.TabStop = true;
-            this.optionTable2.Text = "Deparment";
-            this.optionTable2.UseVisualStyleBackColor = true;
             // 
             // optionTable3
             // 
             this.optionTable3.AutoSize = true;
             this.optionTable3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.optionTable3.Location = new System.Drawing.Point(325, 129);
+            this.optionTable3.Location = new System.Drawing.Point(292, 116);
             this.optionTable3.Name = "optionTable3";
             this.optionTable3.Size = new System.Drawing.Size(63, 19);
             this.optionTable3.TabIndex = 2;
@@ -82,7 +69,7 @@ namespace project.UserInterface
             // 
             this.optionTable4.AutoSize = true;
             this.optionTable4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.optionTable4.Location = new System.Drawing.Point(325, 171);
+            this.optionTable4.Location = new System.Drawing.Point(292, 169);
             this.optionTable4.Name = "optionTable4";
             this.optionTable4.Size = new System.Drawing.Size(75, 19);
             this.optionTable4.TabIndex = 3;
@@ -94,7 +81,7 @@ namespace project.UserInterface
             // 
             this.title2.AutoSize = true;
             this.title2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.title2.Location = new System.Drawing.Point(322, 9);
+            this.title2.Location = new System.Drawing.Point(306, 9);
             this.title2.Name = "title2";
             this.title2.Size = new System.Drawing.Size(124, 16);
             this.title2.TabIndex = 4;
@@ -131,7 +118,7 @@ namespace project.UserInterface
             // generateButton
             // 
             this.generateButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.generateButton.Location = new System.Drawing.Point(200, 125);
+            this.generateButton.Location = new System.Drawing.Point(163, 112);
             this.generateButton.Name = "generateButton";
             this.generateButton.Size = new System.Drawing.Size(75, 23);
             this.generateButton.TabIndex = 8;
@@ -151,7 +138,6 @@ namespace project.UserInterface
             this.Controls.Add(this.title2);
             this.Controls.Add(this.optionTable4);
             this.Controls.Add(this.optionTable3);
-            this.Controls.Add(this.optionTable2);
             this.Controls.Add(this.optionTable1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
             this.MaximizeBox = false;
@@ -167,7 +153,6 @@ namespace project.UserInterface
         #endregion
 
         private System.Windows.Forms.RadioButton optionTable1;
-        private System.Windows.Forms.RadioButton optionTable2;
         private System.Windows.Forms.RadioButton optionTable3;
         private System.Windows.Forms.RadioButton optionTable4;
         private System.Windows.Forms.Label title2;
