@@ -100,7 +100,7 @@ namespace project.UserInterface
 
                     for (int i = 0; i < number; i++)
                     {
-                        writer.WriteLine(generateProject("A" + i, "D" + i));
+                        writer.WriteLine(generateProject("P" + i, "D" + i));
                     }
 
                     MessageBox.Show("Archivo completo (Ruta: Bin, Debug)");
