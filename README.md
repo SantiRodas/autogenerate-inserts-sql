@@ -33,4 +33,4 @@ In this version, the user will have the possibility to select one of the given t
 
 ## Screenshots
 
-![](https://github.com/SantiRodas/autogenerate-inserts-sql/blob/master/images/2.JPG)
+![](https://github.com/SantiRodas/autogenerate-inserts-sql/blob/master/images/3.JPG)
